@@ -5,7 +5,7 @@
         box-sizing: border-box;
     }
 
-    body {
+body {
   background-color: #cfe8e8;
   display: flex;
   justify-content: center;
@@ -44,14 +44,15 @@
   transition: opacity 0.3s ease;
 }
 
-/* Trên máy tính: hover sẽ hiện overlay */
+/* Hover cho máy tính */
 .image-container:hover .image-overlay {
   opacity: 1;
 }
 
-/* Trên điện thoại: thêm class active sẽ hiện overlay */
-.image-container.active .image-overlay {
+/* Active cho điện thoại (chạm giữ) */
+.image-container:active .image-overlay {
   opacity: 1;
 }
+
 
 
