@@ -13,5 +13,21 @@
       <p>I LOVE YOU PẶC PẶC</p>
     </div>
   </div>
+  <script>
+  const container = document.querySelector(".image-container");
+
+  container.addEventListener("touchstart", () => {
+    container.classList.add("active");
+  });
+
+  container.addEventListener("touchend", () => {
+    container.classList.remove("active");
+  });
+
+  container.addEventListener("touchcancel", () => {
+    container.classList.remove("active");
+  });
+</script>
 </body>
 </html>
+
