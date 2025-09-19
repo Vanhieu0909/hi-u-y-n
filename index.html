@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Demo Overlay Mobile</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>Demo Overlay Touch / Hover</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- liên kết CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="image-container">
+
+  <div class="image-container" id="imageBox">
+    <!-- THAY đường dẫn ảnh cho đúng -->
     <img src="Ten/graduate.jpg" alt="ảnh tốt nghiệp">
-    <div class="image-overlay">
+    <div class="image-overlay" aria-hidden="true">
       <h3>Xin chào em Yến</h3>
       <p>I LOVE YOU PẶC PẶC</p>
     </div>
   </div>
+
   <script>
-  const container = document.querySelector(".image-container");
+    (function(){
+      const box = document.getElementById('imageBox');
+      if(!box) return;
 
-  container.addEventListener("touchstart", () => {
-    container.classList.add("active");
-  });
+      function onPointerDown(e){
+        if (e.isPrimary === false) return;
+        box.classList.add('active');
+      }
+      function onPointerUp(e){
+        if (e.isPrimary === false) return;
+        box.classList.remove('active');
+      }
 
-  container.addEventListener("touchend", () => {
-    container.classList.remove("active");
-  });
+      box.addEventListener('pointerdown', onPointerDown, {passive:true});
+      document.addEventListener('pointerup', onPointerUp, {passive:true});
+      box.addEventListener('pointercancel', onPointerUp, {passive:true});
+      box.addEventListener('pointerleave', onPointerUp, {passive:true});
 
-  container.addEventListener("touchcancel", () => {
-    container.classList.remove("active");
-  });
-</script>
+      // fallback touch
+      box.addEventListener('touchstart', onPointerDown, {passive:true});
+      document.addEventListener('touchend', onPointerUp, {passive:true});
+      document.addEventListener('touchcancel', onPointerUp, {passive:true});
+    })();
+  </script>
 </body>
 </html>
-
