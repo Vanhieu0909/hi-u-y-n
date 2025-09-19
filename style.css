@@ -103,4 +103,8 @@
 
    .image-container:hover::after {
     left: 150%;
+
    }
+/* Trên điện thoại (hover không có), mình cho overlay hiện luôn khi có class "active" */
+.image-container.active .image-overlay {
+  opacity: 1;
