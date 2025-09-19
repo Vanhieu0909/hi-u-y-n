@@ -14,19 +14,23 @@
     </div>
   </div>
 
-  <script>
-    // Lấy phần tử container
-    const container = document.querySelector(".image-container");
+<script>
+  const container = document.querySelector(".image-container");
 
-    // Khi chạm vào (touchstart) → hiện overlay
-    container.addEventListener("touchstart", () => {
-      container.classList.add("active");
-    });
+  // Khi chạm vào màn hình
+  container.addEventListener("touchstart", () => {
+    container.classList.add("active");
+  });
 
-    // Khi nhấc tay ra (touchend) → ẩn overlay
-    container.addEventListener("touchend", () => {
-      container.classList.remove("active");
-    });
-  </script>
+  // Khi nhấc tay ra hoặc hủy chạm
+  container.addEventListener("touchend", () => {
+    container.classList.remove("active");
+  });
+
+  container.addEventListener("touchcancel", () => {
+    container.classList.remove("active");
+  });
+</script>
 </body>
 </html>
+
