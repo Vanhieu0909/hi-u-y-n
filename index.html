@@ -2,35 +2,16 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Tên website</title>
+  <title>Demo Overlay Mobile</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="image-container">
     <img src="Ten/graduate.jpg" alt="ảnh tốt nghiệp">
     <div class="image-overlay">
-      <h3>xin chào em yến</h3>
+      <h3>Xin chào em Yến</h3>
       <p>I LOVE YOU PẶC PẶC</p>
     </div>
   </div>
-
-<script>
-  const container = document.querySelector(".image-container");
-
-  // Khi chạm vào màn hình
-  container.addEventListener("touchstart", () => {
-    container.classList.add("active");
-  });
-
-  // Khi nhấc tay ra hoặc hủy chạm
-  container.addEventListener("touchend", () => {
-    container.classList.remove("active");
-  });
-
-  container.addEventListener("touchcancel", () => {
-    container.classList.remove("active");
-  });
-</script>
 </body>
 </html>
-
