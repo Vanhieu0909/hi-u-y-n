@@ -95,7 +95,7 @@
         width: -50%;
         height: 100%;
         background: linear-gradient(
-            to right, rgba( 255, 255, 255, 0) 0%, rgba( 255, 255, 255, 0.3) 100% 
+            to right, rgba( 255,255,255,0) 0%, rgba( 255, 255, 255, 0.3) 100% 
         );
         transform: skewX(-25 deg);
         transition: all 0.6 ease;
@@ -103,8 +103,9 @@
 
    .image-container:hover::after {
     left: 150%;
-
    }
-/* Trên điện thoại (hover không có), mình cho overlay hiện luôn khi có class "active" */
-.image-container.active .image-overlay {
-  opacity: 1;
+    /* Trên điện thoại (hover không có), mình cho overlay hiện luôn khi có class "active" */
+    .image-container.active .image-overlay {
+    opacity: 1; 
+    }
+
