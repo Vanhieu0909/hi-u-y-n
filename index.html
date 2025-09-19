@@ -15,16 +15,21 @@
             <h3> xin chào em yến </h3>
             <p> I LOVE YOU PẶC PẶC </p>
     </div>
-      <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const container = document.querySelector(".image-container");
-    const overlay = container.querySelector(".image-overlay");
+<script>
+  // Lấy phần tử container
+  const container = document.querySelector(".image-container");
 
-    container.addEventListener("click", function () {
-      overlay.classList.toggle("show");
-    });
+  // Khi chạm vào (touchstart) → thêm class active để hiện overlay
+  container.addEventListener("touchstart", () => {
+    container.classList.add("active");
+  });
+
+  // Khi nhấc tay ra (touchend) → xóa class active để ẩn overlay
+  container.addEventListener("touchend", () => {
+    container.classList.remove("active");
   });
 </script>
   </body>
 
 </html>
+
