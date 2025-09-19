@@ -1,35 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <!-- Phần đầu -->
-  <head>
-    <title> Tên website </title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css"> 
-  </head>
- 
-  <!-- phần thân -->
-  <body>
-    <div class="image-container">
-        <img src="Ten/graduate.jpg" alt= " anh tot nghiep ">
-        <div class="image-overlay">
-            <h3> xin chào em yến </h3>
-            <p> I LOVE YOU PẶC PẶC </p>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tên website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="image-container">
+    <img src="Ten/graduate.jpg" alt="ảnh tốt nghiệp">
+    <div class="image-overlay">
+      <h3>xin chào em yến</h3>
+      <p>I LOVE YOU PẶC PẶC</p>
     </div>
-<script>
-  // Lấy phần tử container
-  const container = document.querySelector(".image-container");
+  </div>
 
-  // Khi chạm vào (touchstart) → thêm class active để hiện overlay
-  container.addEventListener("touchstart", () => {
-    container.classList.add("active");
-  });
+  <script>
+    // Lấy phần tử container
+    const container = document.querySelector(".image-container");
 
-  // Khi nhấc tay ra (touchend) → xóa class active để ẩn overlay
-  container.addEventListener("touchend", () => {
-    container.classList.remove("active");
-  });
-</script>
-  </body>
+    // Khi chạm vào (touchstart) → hiện overlay
+    container.addEventListener("touchstart", () => {
+      container.classList.add("active");
+    });
 
+    // Khi nhấc tay ra (touchend) → ẩn overlay
+    container.addEventListener("touchend", () => {
+      container.classList.remove("active");
+    });
+  </script>
+</body>
 </html>
-
